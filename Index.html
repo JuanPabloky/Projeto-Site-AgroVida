@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroVida - Sua Loja de Estimação em Agudos</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts para uma tipografia moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <!-- Caso sua imagem esteja na mesma pasta do site, mude o src para o nome dela, ex: src="logo.png" -->
+            <img src="assets/Logo.jpeg" alt="Logo AgroVida" class="logo-agro">
+            
+            <h1>AgroVida</h1>
+            <p>A sua loja de Estimação</p>
+            <p class="subtitulo">Acompanhe de perto o nosso trabalho!</p>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#dicas">Dicas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Seção Home / Introdução -->
+        <section id="home" class="efeito-scroll">
+            <div class="home-hero">
+                <h2>Transforme seu Espaço com a AgroVida</h2>
+                <p>Somos especialistas em criar ambientes vivos e cuidar do seu ecossistema em Agudos. Escolha o serviço ideal para você e fale direto com nosso especialista:</p>
+                
+                <div class="home-destaques">
+                    
+                    <div class="destaque-item">
+                        <div class="destaque-imagem-wrapper">
+                            <img src="assets/lago-home.jpg" alt="Projeto de Lago Ornamental AgroVida" class="destaque-img-servico">
+                        </div>
+                        <h3>Lagos Ornamentais</h3>
+                        <p>Projetos sob medida e manutenção do seu ecossistema aquático.</p>
+                        <button class="btn-orcamento" data-item="Orçamento de Lago Ornamental (Home)">Solicitar Orçamento de Lago</button>
+                    </div>
+
+                    <div class="destaque-item">
+                        <div class="destaque-imagem-wrapper">
+                            <img src="assets/jardinagem-home.jpg" alt="Serviço de Jardinagem e Paisagismo AgroVida" class="destaque-img-servico">
+                        </div>
+                        <h3>Jardinagem & Paisagismo</h3>
+                        <p>Manutenção completa, poda e planejamento de áreas verdes.</p>
+                        <button class="btn-orcamento" data-item="Orçamento de Jardinagem/Paisagismo (Home)">Solicitar Orçamento de Jardim</button>
+                    </div>
+
+                    <div class="destaque-item">
+                        <div class="destaque-imagem-wrapper">
+                            <img src="assets/aquarismo-home.jpg" alt="Montagem de Aquários AgroVida" class="destaque-img-servico">
+                        </div>
+                        <h3>Aquarismo</h3>
+                        <p>Montagem, decoração e consultoria técnica para seu aquário.</p>
+                        <button class="btn-orcamento" data-item="Orçamento de Aquarismo (Home)">Solicitar Orçamento de Aquarismo</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Sobre a Empresa -->
+        <section id="sobre" class="efeito-scroll">
+            <h2>Sobre a AgroVida</h2>
+            <p>Conte um pouco sobre a história da loja em Agudos, missão e valores. Mostre a paixão pelo que fazem!</p>
+        </section>
+
+        <!-- Seção de Serviços -->
+        <section id="servicos" class="efeito-scroll">
+            <h2>Nossos Serviços</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Lagos Ornamentais</h3>
+                    <p>Construção e manutenção do seu ecossistema aquático.</p>
+                    <button class="btn-orcamento" data-item="Lagos Ornamentais">Pedir Orçamento</button>
+                </div>
+                <div class="card">
+                    <h3>Paisagismo</h3>
+                    <p>Planejamento de ambientes verdes harmônicos.</p>
+                    <button class="btn-orcamento" data-item="Paisagismo">Pedir Orçamento</button>
+                </div>
+                <div class="card">
+                    <h3>Jardinagem</h3>
+                    <p>Cuidados e manutenção para manter suas plantas sempre vivas.</p>
+                    <button class="btn-orcamento" data-item="Jardinagem">Pedir Orçamento</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="produtos" class="efeito-scroll">
+            <h2>Nossos Produtos</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Linha Pet</h3>
+                    <p>Cães e gatos saudavéis</p>
+                    <button class="btn-orcamento" data-item="Produtos de Linha Pet">Ver Disponibilidade</button>
+                </div>
+                <div class="card">
+                    <h3>Aquarismo</h3>
+                    <p>Peixes e tudo para o seu aquário.</p>
+                    <button class="btn-orcamento" data-item="Peixes e Aquarismo">Ver Disponibilidade</button>
+                </div>
+                <div class="card">
+                    <h3>Aves</h3>
+                    <p>Acessórios e rações selecionadas.</p>
+                    <button class="btn-orcamento" data-item="Produtos para Aves">Ver Disponibilidade</button>
+                </div>
+                <div class="card">
+                    <h3>Roedores</h3>
+                    <p>Acessórios e rações selecionadas.</p>
+                    <button class="btn-orcamento" data-item="Produtos para Aves">Ver Disponibilidade</button>
+                </div>
+                <div class="card">
+                    <h3>Pesca</h3>
+                    <p>Acessórios e rações selecionadas.</p>
+                    <button class="btn-orcamento" data-item="Produtos para Aves">Ver Disponibilidade</button>
+                </div>
+                <div class="card">
+                    <h3>Medicamentos</h3>
+                    <p>Acessórios e rações selecionadas.</p>
+                    <button class="btn-orcamento" data-item="Produtos para Aves">Ver Disponibilidade</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Dicas e Cuidados -->
+        <section id="dicas" class="efeito-scroll">
+            <h2>Dicas e Cuidados</h2>
+            <p>Espaço reservado para orientações sobre manejo de pets, plantas e lagos. Em breve novidades!</p>
+        </section>
+    </main>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5514997787170?text=Olá!+Estava+no+site+da+AgroVida+e+gostaria+de+tirar+uma+dúvida." 
+       class="btn-whatsapp" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Fale conosco pelo WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp AgroVida" />
+    </a>
+
+    <!-- SCRIPT PARA O EFEITO MODERNO DE ROLAGEM -->
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>
+</body>
+</html>

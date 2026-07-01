@@ -1,0 +1,441 @@
+/* ==========================================================================
+   1. RESET, VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Deslizamento suave nos links de âncora */
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    line-height: 1.7;
+    color: #2d3748;
+    background-color: #f7fafc;
+    overflow-x: hidden; /* Segurança contra quebras de layout laterais */
+}
+
+/* ==========================================================================
+   2. TOPO E NAVEGAÇÃO (HEADER & NAV) - TOTALMENTE FLUIDO
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, #133a2f 0%, #1b4d3e 100%);
+    color: #ffffff;
+    padding: 50px 20px 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Logo Retangular Tratada */
+/* Logo Retangular Tratada com Sombra Suave */
+.logo-agro {
+    width: 100%;
+    max-width: 350px; /* <--- Agora ela pode crescer até 300px no notebook! */
+    height: auto;
+    max-height: 160px; /* Ajustado proporcionalmente para não achatar */
+    object-fit: contain;
+    border-radius: 15px; /* Uma leve curvinha de 8px nos cantos do retângulo suaviza o olhar */
+    border: none;
+    margin-bottom: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* MÁGICA DO DESIGN: Aplica uma sombra leve (blur de 12px) que "esfumaça" o branco sobre o verde */
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.15)); 
+    
+    transition: transform 0.3s ease;
+}
+
+.logo-agro:hover {
+    transform: scale(1.03);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+}
+
+header .subtitulo {
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-top: 5px;
+    color: #81e6d9;
+}
+
+/* Menu de Navegação */
+nav {
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   AJUSTE DE ESPAÇAMENTO E RESPONSIVIDADE DO MENU
+   ========================================================================== */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se a tela diminuir */
+    gap: 15px;       /* <--- ESPAÇAMENTO ENTRE OS BOTÕES no computador */
+    padding: 0 10px;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    
+    /* Aumentamos o padding: 12px vertical (topo/baixo) e 24px horizontal (lados) */
+    padding: 12px 24px; 
+    
+    border-radius: 30px; /* Mantém o estilo arredondado moderno */
+    background-color: rgba(255, 255, 255, 0.08); /* Fundo sutil para parecer um botão real */
+    transition: all 0.3s ease;
+    display: inline-block;
+    white-space: nowrap; /* Impede que o texto dentro do botão quebre em duas linhas */
+}
+
+nav a:hover {
+    background-color: #ffffff;
+    color: #1b4d3e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ==========================================================================
+   3. ESTRUTURA BASE DO CONTEÚDO (MAIN & SECTIONS)
+   ========================================================================== */
+main {
+    max-width: 1200px; /* Aumentado ligeiramente para acomodar melhor 3 colunas */
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-bottom: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+section h2 {
+    color: #1b4d3e;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background-color: #1b4d3e;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   4. LAYOUTS EM GRID (HOME, SERVIÇOS E PRODUTOS)
+   ========================================================================== */
+/* Grid de uso geral para Serviços e Produtos mais abaixo */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #f8fafc;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+    border-color: #1b4d3e;
+}
+
+.card h3 {
+    color: #1b4d3e;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   5. SEÇÃO EXCLUSIVA DA HOME (HERO & CARDS COM IMAGEM)
+   ========================================================================== */
+.home-hero {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.home-hero h2 {
+    font-size: 2.2rem;
+    color: #1b4d3e;
+    margin-bottom: 15px;
+}
+
+.home-hero h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.home-hero > p {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: #4a5568;
+}
+
+/* Container dos 3 Cards com foto na Home */
+.home-destaques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+/* O Card Individual da Home */
+.destaque-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0 20px 0;
+    
+    /* Sombra leve para quebrar o branco contra o fundo cinza/claro do site */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+    
+    transition: all 0.3s ease;
+}
+
+.destaque-item:hover {
+    transform: translateY(-5px);
+    /* Quando o usuário passa o mouse, a sombra aumenta dando efeito de profundidade */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); 
+    border-color: #1b4d3e;
+}
+
+.destaque-imagem-wrapper {
+    width: 100%;
+    height: 180px;
+    background-color: #e2e8f0;
+    position: relative;
+}
+
+.destaque-img-servico {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.destaque-item:hover .destaque-img-servico {
+    transform: scale(1.05);
+}
+
+.destaque-item h3 {
+    font-size: 1.2rem;
+    color: #1b4d3e;
+    margin: 20px 15px 10px 15px;
+    text-align: left;
+}
+
+.destaque-item p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0 15px 20px 15px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   6. BOTÕES (ESTILO DO VENDEDOR ONLINE)
+   ========================================================================== */
+.btn-orcamento {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #1b4d3e;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-orcamento:hover {
+    background-color: #133a2f;
+    transform: scale(1.02);
+}
+
+/* Encaixe do botão dentro dos cards */
+.destaque-item .btn-orcamento {
+    width: calc(100% - 30px);
+    margin: auto 15px 0 15px;
+}
+
+/* ==========================================================================
+   7. ANIMAÇÕES DE ROLAGEM CONTINUA (SCROLL REVEAL)
+   ========================================================================== */
+.efeito-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.efeito-scroll.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   8. BOTÃO DO WHATSAPP FIXO FLUTUANTE
+   ========================================================================== */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-whatsapp img {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* ==========================================================================
+   9. REGRAS DE RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* --- TABLETS E TELAS MÉDIAS (Até 992px) --- */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2.4rem;
+    }
+    main {
+        margin: 40px auto;
+    }
+    section {
+        padding: 30px;
+        margin-bottom: 40px;
+    }
+}
+
+/* --- CELULARES (Até 768px) --- */
+@media (max-width: 768px) {
+    header {
+        padding: 40px 15px 25px 15px;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    /* O menu se adapta transformando os botões em blocos confortáveis para o toque do dedo */
+    nav {
+        margin-top: 30px;
+    }
+    nav ul {
+        flex-direction: column; 
+        gap: 10px;             
+        max-width: 320px;      
+        margin: 0 auto;
+    }
+    
+    nav a {
+        display: block;        
+        text-align: center;     
+        padding: 14px 20px;     
+        font-size: 1rem;
+    }
+
+    /* Ajuste de fontes nas seções */
+    .home-hero h2 {
+        font-size: 1.8rem;
+    }
+    .home-hero > p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* Ajuste do botão do WhatsApp para não ocupar muito espaço em telas pequenas */
+    .btn-whatsapp {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    .btn-whatsapp img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* --- CELULARES PEQUENOS (Até 480px) --- */
+@media (max-width: 480px) {
+    section {
+        padding: 20px 15px; /* Menos margem interna para dar mais espaço ao texto */
+        border-radius: 12px;
+    }
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    /* Garante que o grid force a exibição de 1 coluna inteira por item */
+    .home-destaques, .cards-grid {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    
+    .destaque-imagem-wrapper {
+        height: 160px; /* Altura reduzida para imagens em telas muito pequenas */
+    }
+}
